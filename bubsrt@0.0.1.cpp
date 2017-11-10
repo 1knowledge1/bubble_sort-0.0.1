@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool input(float * &elements, unsigned int num)
+bool input(float * &elements, int num)
 {
     float *tmp_elements;
     string str;
@@ -25,24 +25,22 @@ bool input(float * &elements, unsigned int num)
     return true;
 }
 
-void bubsort(float *elements, unsigned int num)
+void bubsort(float *elements, int num)
 {
     for (int i = 0; i < num - 1; i++) {
         for (int j = 0; j < num - i - 1; j++) {
             if (elements[j] > elements[j + 1]) {
-
                 swap(elements[j], elements[j + 1]);
             }
         }
     }
-
 }
 
 int main() {
     float *elements;
-    unsigned int num;
+    int num;
 
-    if(!(cin>>num))
+    if(!(cin>>num)||(num < 0))
     {
         cout <<"An error has occured while reading input data.\n";
         return 0;
